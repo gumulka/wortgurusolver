@@ -31,8 +31,10 @@ for line in f:
             for l in list(string):
                 if l not in letters:
                     possible = False
+                    break;
                 if string.count(l) > letterword.count(l):
                     possible = False
+                    break;
             if possible:
                 print(string)
     except UnicodeDecodeError:
