@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 import sys
+import os.path
+from reduce import reduce
 
 
 def arguments(minimal=-1, maximal=100):
@@ -51,4 +53,6 @@ def process(letters, minimal, maximal):
 
 if __name__ == "__main__":
     [minimal, maximal, letters] = arguments()
+    if not os.path.isfile("german.small"):
+        reduce()
     process(letters, minimal, maximal)
