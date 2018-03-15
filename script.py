@@ -9,10 +9,14 @@ args = sys.argv
 args.pop(0)
 
 letters = []
-number = 2
+minimal = -1
+maximal = 100
 for x in sys.argv:
     try:
-        number = int(x)
+        if minimal == -1:
+            minimal = int(x)
+        else:
+            maximal = int(x)
     except ValueError:
         if len(x) == 1:
             letters.append(x.upper())
@@ -30,7 +34,8 @@ if len(letters) == 0:
 
 for line in f:
     string = line.strip()
-    if len(string) <= len(letters) and len(string) >= number:
+    length = len(string)
+    if length <= len(letters) and length >= minimal and length <= maximal:
         possible = True
         for l in list(string.upper()):
             if l not in letters:
