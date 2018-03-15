@@ -33,11 +33,11 @@ if len(letters) == 0:
 
 
 for line in f:
-    string = line.strip()
+    string = line.strip().upper()
     length = len(string)
     if length <= len(letters) and length >= minimal and length <= maximal:
         possible = True
-        for l in list(string.upper()):
+        for l in list(string):
             if l not in letters:
                 possible = False
                 break
@@ -45,4 +45,4 @@ for line in f:
                 possible = False
                 break
         if possible:
-            print(string)
+            print(line.strip())
