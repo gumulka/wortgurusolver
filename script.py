@@ -24,15 +24,15 @@ letterword = "".join(letters)
 
 
 for line in f:
-        string = line.strip().upper()
-        if len(string) <= len(letters) and len(string) >= number:
-            possible = True
-            for l in list(string):
-                if l not in letters:
-                    possible = False
-                    break
-                if string.count(l) > letterword.count(l):
-                    possible = False
-                    break
-            if possible:
-                print(string)
+    string = line.strip().upper()
+    if len(string) <= len(letters) and len(string) >= number:
+        possible = True
+        for l in list(string):
+            if l not in letters:
+                possible = False
+                break
+            if string.count(l) > letterword.count(l):
+                possible = False
+                break
+        if possible:
+            print(string)
