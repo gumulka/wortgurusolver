@@ -29,10 +29,10 @@ if len(letters) == 0:
 
 
 for line in f:
-    string = line.strip().upper()
+    string = line.strip()
     if len(string) <= len(letters) and len(string) >= number:
         possible = True
-        for l in list(string):
+        for l in list(string.upper()):
             if l not in letters:
                 possible = False
                 break
