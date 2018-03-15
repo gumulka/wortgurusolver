@@ -22,6 +22,11 @@ for x in sys.argv:
 
 letterword = "".join(letters)
 
+if len(letters) == 0:
+    print("You must pass the available letters as arguments.")
+    print("A number can be passed to indicate the minimal size of words")
+    exit(-1)
+
 
 for line in f:
     string = line.strip().upper()
