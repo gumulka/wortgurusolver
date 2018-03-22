@@ -15,8 +15,13 @@ def reduce():
 
     for line in r:
         string = line.strip()
-        if len(string) <= 8:
-            w.write(string + "\n")
+        if len(string) > 6:
+            continue
+        if len(string) < 3:
+            continue
+        if string.upper() == string:
+            continue
+        w.write(string + "\n")
 
 
 if __name__ == "__main__":
